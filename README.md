@@ -1,10 +1,10 @@
 # Endovascular Federated Learning
 
-This repository is the implementation of baselines (including UNet, TransUNet and SwinUNet) on the Endovascular Dataset
+This repository contains the implementations of federated algorithms (FedAvg ,FedProx) for segmentation task. 
 
 ## Prerequisites
 
-We recommend you to use Python 3.x (1<=x<=9) and conda environment for managing packages: 
+We recommend you to use Python 3 and conda environment for managing packages: 
 
 ```
 conda create -n fl-endo python==3.9
@@ -35,7 +35,7 @@ Here is the detail of parameters used in this repo:
 - `alg`: Federated learning algorithm: Currently supported: `fedavg`, `fedprox` 
 - `lr`: Learning rate. Can be tuned with other values 
 
-We use [UNet](https://github.com/milesial/Pytorch-UNet) model in the implementation for segmentation task. 
+We use [UNet](https://github.com/milesial/Pytorch-UNet) in the implementation for segmentation task. 
 
 ## Training 
 
