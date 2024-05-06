@@ -35,11 +35,25 @@ Here is the detail of parameters used in this repo:
 - `alg`: Federated learning algorithm: Currently supported: `fedavg`, `fedprox` 
 - `lr`: Learning rate. Can be tuned with other values 
 
+We use [UNet](https://github.com/milesial/Pytorch-UNet) model in the implementation for segmentation task. 
+
 ## Training 
 
 ```
 python3 main.py --alg=fedavg --lr=0.01 --mu=5 --epochs=1 --comm_round=50 --n_parties=7 --partition=noniid --beta=0.5 --logdir='./logs/' --datadir='data/phantom_train'
 ```
+
+When running, global model is saved every communicaltion round. 
+
+## Test 
+
+You can pick a global model to test on the endovascular data: 
+
+```
+python test.py --amp --datadir DATA_DIR --ckpt_dir CKPT_DIR
+```
+
+Replace `DATA_DIR` with the directory contains image data and `CKPT_DIR` with the global model at any round you want to test.
 
 ## Acknowledgment 
 
