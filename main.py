@@ -61,7 +61,7 @@ def get_args():
     return args
 
 
-def init_nets( n_parties):
+def  init_nets( n_parties):
     nets = {net_i: None for net_i in range(n_parties)}
     for net_i in range(n_parties):
         net = UNet(n_channels=3, n_classes=3, bilinear=False)
@@ -275,7 +275,7 @@ def local_train_net_segmentation(nets, args, net_dataidx_map, train_dl=None, tes
     return nets
 
 if __name__ == '__main__':
-
+    os.environ['CUDA_VISIBLE_DEVICES'] = str(0)
     args = get_args()
     device = args.device
     mkdirs(args.logdir)
