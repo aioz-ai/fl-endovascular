@@ -39,11 +39,17 @@ We use [UNet](https://github.com/milesial/Pytorch-UNet) in the implementation fo
 
 ## Training 
 
+Run this command to train the model with `fedavg` algorithm
 ```
 python3 main.py --alg=fedavg --lr=0.01 --mu=5 --epochs=1 --comm_round=50 --n_parties=7 --partition=noniid --beta=0.5 --logdir='./logs/' --datadir='data/phantom_train'
 ```
 
-When running, global model is saved every communicaltion round. 
+Run this command to train the model with `fedprox` algorithm 
+```
+python3 main.py --alg=fedprox --lr=0.01 --mu=0.1 --epochs=1 --comm_round=50 --n_parties=7 --partition=noniid --beta=0.5 --logdir='./logs/' --datadir='data/phantom_train'
+```
+
+The hyperparameters in the given commands can be tuned for the convenience of your experiments. 
 
 ## Test 
 
